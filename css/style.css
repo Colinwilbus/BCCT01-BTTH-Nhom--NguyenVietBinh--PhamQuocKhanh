@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Quicksand", sans-serif;
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+h6 {
+  font-family: "Pacifico", cursive;
+  font-size: 1.3rem;
+  color: #ff6600;
+}
+/* header */
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 0;
+}
+header .header__content {
+  padding: 0;
+}
+header .header__content .navbar {
+  justify-content: space-between;
+}
+header .header__content .header__logo {
+  width: 70%;
+}
+header .header__content .navbar-brand {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.header__content .navbar-collapse {
+  justify-content: space-between;
+}
+.header__content .header__form form {
+  position: relative;
+}
+.header__content .header__form .form-control {
+  height: 45px;
+  padding: 10px 50px 10px 20px;
+}
+.header__content .header__form .fa-search {
+  position: absolute;
+  font-size: 0.9rem;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+.header__content .navbar-collapse .header__icon {
+  color: white;
+  font-size: 1.2rem;
+}
+.header__content .header__btn button {
+  background-color: transparent;
+  font-size: 2rem;
+  color: white;
+  border: none;
+  margin-left: 10px;
+}
+/* myCarousel */
+.myCarousel {
+  background-image: url(../img/banner1.jpg);
+  background-position: top;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  background-attachment: fixed;
+}
+.myCarousel::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #ff6600,
+    rgba(255, 102, 0, 0.556),
+    #ff66000c
+  );
+  top: 0;
+  left: 0;
+}
+.myCarousel .myCarousel__content {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.myCarousel .myCarousel__overlay {
+  padding-right: 600px;
+}
+.myCarousel .myCarousel__overlay h2 {
+  font-size: 3.2rem;
+  color: white;
+  font-weight: 600;
+  margin: 100px 0 0;
+  line-height: 65px;
+}
+.myCarousel .myCarousel__overlay p {
+  margin: 20px 0 50px;
+  color: white;
+  line-height: 30px;
+}
+.myCarousel__overlay a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  width: 200px;
+  height: 55px;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 0.9rem;
+  transition: all 0.5s;
+}
+.myCarousel__overlay a .fa-chevron-right {
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.myCarousel__overlay a:hover {
+  background-color: white;
+  color: #ff6600;
+}
+/* aboutUs */
+.aboutUs {
+  padding: 100px 0 80px;
+}
+.aboutUs .aboutUs__content .aboutUs__left h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.aboutUs .aboutUs__content .aboutUs__right {
+  padding-left: 50px;
+}
+.aboutUs .aboutUs__content .aboutUs__right p {
+  font-size: 1.1rem;
+  line-height: 30px;
+}
+/* bookEasly */
+.bookEasly .bookEasly__content .bookEasly__left {
+  position: relative;
+  padding: 0;
+}
+.bookEasly .bookEasly__content .bookEasly__left::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(16, 15, 19, 0.46);
+  display: block;
+}
+.bookEasly .bookEasly__content .bookEasly__left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bookEasly .bookEasly__content .bookEasly__right {
+  padding: 70px;
+  background-color: #ff6600;
+}
+.bookEasly__content .bookEasly__right h6 {
+  color: white;
+}
+.bookEasly__content .bookEasly__right h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.bookEasly__content .bookEasly__right p {
+  font-size: 1.1rem;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+.bookEasly__right .bookEasly__detail {
+  margin-top: 50px;
+}
+.bookEasly__right .bookEasly__detail a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px 0 10px;
+}
+
+.bookEasly__content .bookEasly__detail i {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  color: #ff6600;
+  font-size: 1.4rem;
+
+  transition: all 0.5s;
+}
+.bookEasly__content .bookEasly__item:hover i {
+  color: #ffc600;
+}
+/* whatNew */
+.whatsNew {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.whatsNew .whatsNew__item {
+  position: relative;
+  margin: 15px 0;
+}
+.whatsNew .whatsNew__item img {
+  border-radius: 7px;
+}
+.whatsNew .whatsNew__overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.238),
+    rgba(255, 255, 255, 0.138),
+    rgba(255, 255, 255, 0.138)
+  );
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 7px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.whatsNew .whatsNew__item:hover .whatsNew__overlay {
+  opacity: 1;
+}
+.whatsNew .whatsNew__item .whatNew__detail {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  padding: 100px 0 0 50px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.747), transparent);
+  border-radius: 7px;
+}
+
+.whatsNew__item .whatNew__detail a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+.whatsNew__item .whatNew__detail p {
+  font-size: 1.1rem;
+  color: #ffc600;
+  font-weight: 500;
+  margin-top: 5px;
+}
