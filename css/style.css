@@ -7,7 +7,7 @@ html,
 body {
   font-family: "Quicksand", sans-serif;
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
   }
@@ -66,6 +66,7 @@ header .header__content .navbar-brand {
   border: none;
   margin-left: 10px;
 }
+
 /* myCarousel */
 .myCarousel {
   background-image: url(../img/banner1.jpg);
@@ -96,9 +97,7 @@ header .header__content .navbar-brand {
   top: 50%;
   transform: translateY(-50%);
 }
-.myCarousel .myCarousel__overlay {
-  padding-right: 600px;
-}
+
 .myCarousel .myCarousel__overlay h2 {
   font-size: 3.2rem;
   color: white;
@@ -267,4 +266,57 @@ header .header__content .navbar-brand {
   color: #ffc600;
   font-weight: 500;
   margin-top: 5px;
+}
+/* service */
+.service {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #fff, #f9f9f9, #fdfdfd);
+}
+
+.service .service__item {
+  border: 1px solid rgba(128, 128, 128, 0.187);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 15px 0;
+  background-color: white;
+  transition: all 0.5s;
+}
+.service .service__item .row {
+  margin-bottom: 16px;
+}
+.service__item .row i {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: #ff6600;
+  transition: all 0.5s;
+}
+.service__item .row p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: rgba(128, 128, 128, 0.85);
+}
+
+.service__item .row h4 {
+  font-weight: 600;
+  transition: all 0.1s;
+}
+.service__item .row h4:hover {
+  color: #ff6600;
+}
+.service__item p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: rgba(128, 128, 128, 0.85);
+}
+.service .service__item:hover {
+  box-shadow: 0 0 55px rgba(128, 128, 128, 0.15);
+}
+.service .service__item:hover i {
+  background-color: #ff6600;
+  color: white;
 }
