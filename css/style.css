@@ -7,14 +7,10 @@ html,
 body {
   font-family: "Quicksand", sans-serif;
 }
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
+
 h6 {
   font-family: "Pacifico", cursive;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #ff6600;
 }
 /* header */
@@ -30,9 +26,6 @@ header .header__content {
 header .header__content .navbar {
   justify-content: space-between;
 }
-header .header__content .header__logo {
-  width: 70%;
-}
 header .header__content .navbar-brand {
   font-size: 2.5rem;
   font-weight: 700;
@@ -42,10 +35,12 @@ header .header__content .navbar-brand {
 }
 .header__content .header__form form {
   position: relative;
+  display: none;
 }
 .header__content .header__form .form-control {
   height: 45px;
   padding: 10px 50px 10px 20px;
+  border: none;
 }
 .header__content .header__form .fa-search {
   position: absolute;
@@ -59,6 +54,12 @@ header .header__content .navbar-brand {
   color: white;
   font-size: 1.2rem;
 }
+.header__icon span {
+  padding: 20px;
+}
+.header__icon #lightMode {
+  display: none;
+}
 .header__content .header__btn button {
   background-color: transparent;
   font-size: 2rem;
@@ -66,11 +67,70 @@ header .header__content .navbar-brand {
   border: none;
   margin-left: 10px;
 }
-
+header .header__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.728);
+  top: 0;
+  left: 0;
+  animation: openNav 0.2s linear 0s;
+  display: none;
+}
+@keyframes openNav {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes closeNav {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+.header__overlay .header__close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #ff6600;
+  border: none;
+  color: white;
+}
+.header__overlay .header__hidden {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.header__overlay .header__hidden ul {
+  list-style: none;
+}
+.header__overlay .header__hidden ul li {
+  margin: 10px 0;
+}
+.header__overlay ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s;
+}
+.header__overlay ul li a:hover {
+  color: #ff6600;
+}
 /* myCarousel */
 .myCarousel {
   background-image: url(../img/banner1.jpg);
-  background-position: top;
+  background-position: left;
   background-size: cover;
   height: 700px;
   position: relative;
@@ -99,14 +159,13 @@ header .header__content .navbar-brand {
 }
 
 .myCarousel .myCarousel__overlay h2 {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   color: white;
   font-weight: 600;
   margin: 100px 0 0;
-  line-height: 65px;
 }
 .myCarousel .myCarousel__overlay p {
-  margin: 20px 0 50px;
+  margin: 20px 0;
   color: white;
   line-height: 30px;
 }
@@ -132,22 +191,28 @@ header .header__content .navbar-brand {
   background-color: white;
   color: #ff6600;
 }
+
 /* aboutUs */
 .aboutUs {
-  padding: 100px 0 80px;
+  padding: 50px 0;
 }
 .aboutUs .aboutUs__content .aboutUs__left h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 .aboutUs .aboutUs__content .aboutUs__right {
-  padding-left: 50px;
+  margin-top: 30px;
 }
 .aboutUs .aboutUs__content .aboutUs__right p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 30px;
+  margin: 0;
 }
 /* bookEasly */
+.bookEasly {
+  padding: 50px 15px;
+  background-color: #ff6600;
+}
 .bookEasly .bookEasly__content .bookEasly__left {
   position: relative;
   padding: 0;
@@ -168,18 +233,17 @@ header .header__content .navbar-brand {
   object-fit: cover;
 }
 .bookEasly .bookEasly__content .bookEasly__right {
-  padding: 70px;
-  background-color: #ff6600;
+  padding: 50px 15px 0;
 }
 .bookEasly__content .bookEasly__right h6 {
   color: white;
 }
 .bookEasly__content .bookEasly__right h3 {
-  font-size: 2.4rem;
+  font-size: 1.9rem;
   font-weight: 600;
 }
 .bookEasly__content .bookEasly__right p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 30px;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -191,7 +255,7 @@ header .header__content .navbar-brand {
   display: block;
   text-decoration: none;
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   padding: 20px 0 10px;
 }
@@ -211,12 +275,15 @@ header .header__content .navbar-brand {
 .bookEasly__content .bookEasly__item:hover i {
   color: #ffc600;
 }
+
 /* whatNew */
 .whatsNew {
   padding: 100px 0;
   background-color: #f7f7f7;
 }
-
+.whatsNew .whatsNew__title h3 {
+  font-weight: 600;
+}
 .whatsNew .whatsNew__item {
   position: relative;
   margin: 15px 0;
@@ -250,26 +317,27 @@ header .header__content .navbar-brand {
   height: 200px;
   bottom: 0;
   left: 0;
-  padding: 100px 0 0 50px;
+  padding: 130px 0 0 20px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.747), transparent);
   border-radius: 7px;
 }
 
 .whatsNew__item .whatNew__detail a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
 }
 .whatsNew__item .whatNew__detail p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ffc600;
   font-weight: 500;
   margin-top: 5px;
 }
+
 /* service */
 .service {
-  padding: 100px 0;
+  padding: 60px 0;
   background: linear-gradient(to bottom, #fff, #f9f9f9, #fdfdfd);
 }
 
@@ -297,19 +365,20 @@ header .header__content .navbar-brand {
 }
 .service__item .row p {
   margin-bottom: 10px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(128, 128, 128, 0.85);
 }
 
 .service__item .row h4 {
   font-weight: 600;
   transition: all 0.1s;
+  font-size: 1.2rem;
 }
 .service__item .row h4:hover {
   color: #ff6600;
 }
 .service__item p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   color: rgba(128, 128, 128, 0.85);
 }
@@ -319,4 +388,204 @@ header .header__content .navbar-brand {
 .service .service__item:hover i {
   background-color: #ff6600;
   color: white;
+}
+@media screen and (min-width: 576px) {
+  /* bookEasly */
+  .bookEasly__content .bookEasly__right h3 {
+    font-size: 2rem;
+  }
+  .bookEasly__content .bookEasly__right p {
+    font-size: 1.1rem;
+  }
+  .bookEasly__right .bookEasly__detail a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+  }
+  /* whatsNew */
+  .whatsNew__item .whatNew__detail a {
+    font-size: 1.1rem;
+  }
+  .whatsNew__item .whatNew__detail p {
+    font-size: 1rem;
+  }
+  /* service */
+
+  .service__item p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 604px) {
+  /* header */
+  .header__content .header__form form {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* header */
+  .header__overlay .header__hidden ul li {
+    margin: 20px 0;
+  }
+  .header__overlay ul li a {
+    font-size: 1.2rem;
+  }
+  /* Carousel */
+  .myCarousel .myCarousel__overlay h2 {
+    font-size: 2.6rem;
+    margin-top: 0px;
+  }
+  .myCarousel .myCarousel__overlay p {
+    margin-bottom: 50px;
+  }
+  /* AboutUs */
+  .aboutUs .aboutUs__content .aboutUs__left h3 {
+    font-size: 1.9rem;
+    font-weight: 600;
+  }
+  .aboutUs .aboutUs__content .aboutUs__right {
+    margin-top: 30px;
+  }
+  .aboutUs .aboutUs__content .aboutUs__right p {
+    font-size: 1.1rem;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  /* bookEasly */
+  .bookEasly .bookEasly__content .bookEasly__right {
+    padding: 50px 50px 0;
+  }
+  /* whatsNew */
+  .whatsNew .whatsNew__title h3 {
+    font-size: 1.9rem;
+  }
+  .whatsNew .whatsNew__item .whatNew__detail {
+    padding: 110px 0 0 50px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* Carousel */
+  .myCarousel .myCarousel__overlay h2 {
+    font-size: 2.6rem;
+    padding-right: 340px;
+  }
+  .myCarousel .myCarousel__overlay p {
+    margin-bottom: 50px;
+    padding-right: 340px;
+  }
+  /* AboutUs */
+  .aboutUs {
+    padding: 95px 0;
+  }
+  .aboutUs .aboutUs__content .aboutUs__right {
+    margin-top: 0px;
+    padding-left: 50px;
+  }
+  .aboutUs .aboutUs__content .aboutUs__right p {
+    font-size: 1.1rem;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  /* bookEasly */
+  .bookEasly {
+    padding: 25px 0px;
+    background-color: #ff6600;
+  }
+  .bookEasly .bookEasly__content .bookEasly__right {
+    padding: 50px 70px;
+  }
+  /* whatsNew */
+
+  .whatsNew__item .whatNew__detail a {
+    font-size: 1.3rem;
+  }
+  .whatsNew__item .whatNew__detail p {
+    font-size: 1.1rem;
+  }
+  /* Service */
+  .service {
+    padding: 100px 0;
+  }
+  .service__item .row p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: rgba(128, 128, 128, 0.85);
+  }
+
+  .service__item .row h4 {
+    font-weight: 600;
+    transition: all 0.1s;
+  }
+  .service__item p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: rgba(128, 128, 128, 0.85);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  /* Carousel */
+  .myCarousel .myCarousel__overlay h2 {
+    font-size: 3.2rem;
+    padding-right: 0px;
+    margin-top: 120px;
+  }
+  .myCarousel .myCarousel__overlay p {
+    margin-bottom: 50px;
+    padding-right: 0;
+  }
+  /* AboutUs */
+  .aboutUs .aboutUs__content .aboutUs__left h6 {
+    font-size: 1.2rem;
+  }
+  .aboutUs .aboutUs__content .aboutUs__left h3 {
+    font-size: 2.3rem;
+    font-weight: 600;
+  }
+  .aboutUs .aboutUs__content .aboutUs__right p {
+    font-size: 1.1rem;
+    line-height: 30px;
+  }
+  /* bookEasly */
+  .bookEasly {
+    padding: 0;
+  }
+  .bookEasly .bookEasly__content .bookEasly__right {
+    padding: 70px 70px;
+  }
+  .bookEasly__content .bookEasly__right h3 {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+  .bookEasly__content .bookEasly__right p {
+    font-size: 1.1rem;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+  /* whatsNew */
+  .whatsNew__item .whatNew__detail a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+  .whatsNew__item .whatNew__detail p {
+    font-size: 1.1rem;
+    color: #ffc600;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  /* service */
+  .service__item .row p {
+    font-size: 1.1rem;
+  }
+
+  .service__item .row h4 {
+    font-weight: 600;
+    transition: all 0.1s;
+    font-size: 1.4rem;
+  }
 }
